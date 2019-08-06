@@ -1,5 +1,8 @@
 package linkedlist;
 
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  * 141
  * https://leetcode.com/problems/linked-list-cycle/
@@ -8,6 +11,13 @@ package linkedlist;
 public class LinkedListCycle {
 
     public class Solution {
+
+
+        /**
+         * Two Pointers
+         * @param head
+         * @return
+         */
         public boolean hasCycle(ListNode head) {
             if(head == null || head.next == null){
                 return false;
@@ -24,6 +34,26 @@ public class LinkedListCycle {
             }
             return true;
         }
+
+
+        /**
+         * Hash Table
+         * @param head
+         * @return
+         */
+        public boolean hasCycleV2(ListNode head) {
+            Set<ListNode> nodesSeen = new HashSet<ListNode>();
+            while (head != null) {
+                if (nodesSeen.contains(head)) {
+                    return true;
+                } else {
+                    nodesSeen.add(head);
+                }
+                head = head.next;
+            }
+            return false;
+        }
+
     }
 
     class ListNode {
