@@ -1,5 +1,7 @@
 package tree;
 
+import entity.TreeNode;
+
 /**
  * 230
  * Kth Smallest Element in a BST
@@ -26,19 +28,5 @@ public class KthSmallestElementInBST {
             result = root.val;
         }
         traverse(root.right, k);
-    }
-
-    class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        public TreeNode(int val) {
-            this.val = val;
-        }
-    }
-
-    public static void main(String[] args) {
-
     }
 }

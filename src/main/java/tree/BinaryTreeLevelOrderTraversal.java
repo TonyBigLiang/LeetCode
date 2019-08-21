@@ -22,9 +22,9 @@ public class BinaryTreeLevelOrderTraversal {
 
         queue.offer(root);
         while (!queue.isEmpty()) {
-            int levelNum = queue.size();
+            int levelNodeNum = queue.size();
             List<Integer> subRes = new LinkedList<>();
-            for (int i = 0; i < levelNum; i++) {
+            for (int i = 0; i < levelNodeNum; i++) {
                 if (queue.peek().left != null) {
                     queue.offer(queue.peek().left);
                 }
